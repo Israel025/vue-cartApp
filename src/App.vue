@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <Header></Header>
+    <MyHeader></MyHeader>
+    <router-view></router-view>
     
   </div>
 </template>
 
 <script>
-import Header from "./components/common/Header";
+import MyHeader from "./components/common/Header";
+import CartBtn from "./components/common/cartBtn";
 
 export default {
   name: "app",
   components: {
-    Header,
+    MyHeader
   }
 };
 </script>
@@ -29,4 +31,8 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+.btn{
+  color: #ffffff;
+  }
 </style>

@@ -3,7 +3,7 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-export const store = new Vuex.Store({
+export default new Vuex.Store({
 
   state: {
     smartphones:[
@@ -92,14 +92,14 @@ export const store = new Vuex.Store({
 
   },
 
-  mutations: {
-    change(state, flavor) {
-      state.flavor = flavor
-    }
-  },
+  // mutations: {
+  //   change(state, flavor) {
+  //     state.flavor = flavor
+  //   }
+  // },
   
-  getters: {
-    flavor: state => state.flavor
-  }
+  // getters: {
+  //   flavor: state => state.flavor
+  // }
 
 });

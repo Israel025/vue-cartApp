@@ -3,13 +3,16 @@
     <nav class="nav">
       <ul class="navLinks">
         <li class="link">
-          <a href="#">All products</a>
+          <router-link to="/">All Products</router-link>
         </li>
         <li class="link">
-          <a href="#">Smartphones</a>
+          <router-link to="/about">Smartphones</router-link>
         </li>
         <li class="link">
-          <a href="#">Notebooks</a>
+          <router-link to="">Notebooks</router-link>
+        </li>
+        <li class="link">
+          <router-link to="">Notebooks</router-link>
         </li>
       </ul>
     </nav>
@@ -17,7 +20,11 @@
 </template>
 
 <script>
+import CartBtn from "./cartBtn"
 export default {
+  components:{
+    CartBtn
+    }
 };
 </script>
 
