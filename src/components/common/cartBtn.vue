@@ -1,6 +1,7 @@
 <template>
   <button class="btn">
-    Cart
+    <slot></slot>
+    <img src="../../assets/images/cart.svg" alt="Cart Icon" class="crtIco">
   </button>  
 </template>
 <script>
@@ -18,8 +19,25 @@ export default {
 </script>
 <style scoped>
 .btn{
-  color: #ffffff;
+  background: rgb(6, 153, 13);
+  cursor: pointer;
+  outline: none;
+  border: .04em solid rgb(231, 231, 231);
+  border-radius: 9px;
+  height: 2.5em;
+  width: 7em;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
-
+.crtIco{
+  height: 40px;
+  width: 40px;
+}
+.btn > p{
+  margin: auto;
+  font-weight: bold;
+}
 </style>
 

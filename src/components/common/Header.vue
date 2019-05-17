@@ -11,20 +11,15 @@
         <li class="link">
           <router-link to="">Notebooks</router-link>
         </li>
-        <li class="link">
-          <router-link to="">Notebooks</router-link>
-        </li>
       </ul>
     </nav>
+    <slot></slot>
   </header>
 </template>
 
 <script>
-import CartBtn from "./cartBtn"
+
 export default {
-  components:{
-    CartBtn
-    }
 };
 </script>
 

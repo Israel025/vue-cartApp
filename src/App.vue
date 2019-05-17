@@ -1,19 +1,23 @@
 <template>
   <div id="app">
-    <MyHeader></MyHeader>
+    <TopMenu>
+      <cartBtn class="btn"><p>Cart</p>
+      </cartBtn>
+    </TopMenu>
+
     <router-view></router-view>
-    
   </div>
 </template>
 
 <script>
-import MyHeader from "./components/common/Header";
-import CartBtn from "./components/common/cartBtn";
+import TopMenu from "./components/common/Header";
+import cartBtn from "./components/common/cartBtn";
 
 export default {
   name: "app",
   components: {
-    MyHeader
+    TopMenu,
+    cartBtn,
   }
 };
 </script>
@@ -29,10 +33,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
-.btn{
-  color: #ffffff;
-  }
+
 </style>

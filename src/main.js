@@ -13,8 +13,8 @@ new Vue({
 
 // new Vue({
 //   el: '#app',
-//   // router,
-//   // store,
+//   router,
+//   store,
 //   components: { App },
 //   template: '<App/>',
 // });
