@@ -1,7 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import AllProducts from "../components/AllProducts";
-import AboutPage from "../components/AboutPage";
+import Notebooks from "../components/Notebooks";
+import Smartphones from "../components/Smartphones";
+import Cartpage from "../components/CartPage";
+
 
 Vue.use(Router);
 
@@ -12,10 +15,23 @@ export default new Router({
       name: 'All Products',
       component: AllProducts,
     },
+
     {
-      path: '/about',
-      name: 'about',
-      component: AboutPage,
+      path: '/notebooks',
+      name: 'notebooks',
+      component: Notebooks,
+    },
+
+    {
+      path: '/smartphones',
+      name: 'smartphones',
+      component: Smartphones,
+    },
+
+    {
+      path: '/cart',
+      name: 'cart',
+      component: Cartpage,
     }
   ],
 });

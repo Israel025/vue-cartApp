@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <TopMenu>
-      <cartBtn class="btn"><p>Cart</p>
-      </cartBtn>
+      <router-link to="/cart">
+        <cartBtn class="btn">
+          <p>Cart</p>
+        </cartBtn>
+      </router-link>
+      
     </TopMenu>
 
     <router-view></router-view>
@@ -33,6 +37,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 
