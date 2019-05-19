@@ -1,8 +1,8 @@
 <template>
-  <button class="btn">
+  <Button class="btn">
     <slot></slot>
     <img src="../../assets/images/cart.svg" alt="Cart Icon" class="crtIco">
-  </button>  
+  </Button>  
 </template>
 <script>
 export default {
@@ -24,8 +24,7 @@ export default {
   outline: none;
   border: .04em solid rgb(231, 231, 231);
   border-radius: 9px;
-  height: 2.5em;
-  width: 7em;
+  box-sizing: border-box;
   color: #fff;
   display: flex;
   justify-content: center;

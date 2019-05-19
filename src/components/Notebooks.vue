@@ -1,15 +1,27 @@
 <template>
   <div>
-    <h1>Hello world, this is Notebooks page</h1>
+    <Lister :products="notebooks" productImg="pc-img"/>   
   </div>
 </template>
 
 <script>
+import Lister from "./common/ProductsLister";
 export default {
+  
+  components:{
+    Lister,
+  },
+
+  computed:{
+    notebooks() {
+      return this.$store.state.notebooks;
+    },
+
+  },
 
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

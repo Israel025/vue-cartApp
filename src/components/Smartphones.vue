@@ -1,11 +1,22 @@
 <template>
   <div>
-    <h1>Hello world this is Smartphones page</h1>
+    <Lister :products="smartphones"/>   
   </div>
 </template>
 
 <script>
+import Lister from "./common/ProductsLister";
 export default {
+  components:{
+    Lister,
+  },
+
+  computed:{
+    smartphones() {
+      return this.$store.state.smartphones;
+    },
+
+  },
 
 }
 </script>

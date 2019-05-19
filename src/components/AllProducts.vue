@@ -1,22 +1,33 @@
 <template>
   <div>
-    <h1>Hello world i am all products</h1>
-    <!-- <pre>{{products}}</pre> -->
-    <ul>
-      <div v-for="(p, index) in products" :key="index">{{p.name}}</div>
-    </ul>
+    <Lister :products="allProducts" productImg="pc-img"/>
   </div>
 </template>
 
 <script>
+import Lister from "./common/ProductsLister";
 export default {
+  components: {
+    Lister
+  },
+
   computed: {
-    products() {
-      return this.$store.state.smartphones;
+    allProducts() {
+      return this.$store.state.notebooks.concat(this.$store.state.smartphones);
+    },
+
+    imgClass(allProducts) {
+      if (item.id.startsWith("SP")) {
+        return "";
+      }
+
+      if (item.id.startsWith("PC")) {
+        return "pc-img";
+      }
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
 </style>
