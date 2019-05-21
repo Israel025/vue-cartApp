@@ -5,16 +5,19 @@
 </template>
 
 <script>
+
+import { mapGetters } from 'vuex';
 import Lister from "./common/ProductsLister";
 export default {
+  
   components:{
     Lister,
   },
 
   computed:{
-    smartphones() {
-      return this.$store.state.smartphones;
-    },
+    ...mapGetters({
+      smartphones: "getSmartphones"
+    }),
 
   },
 

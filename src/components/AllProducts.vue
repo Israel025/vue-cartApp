@@ -5,26 +5,22 @@
 </template>
 
 <script>
+
+import { mapGetters } from "vuex";
 import Lister from "./common/ProductsLister";
+
 export default {
+  
   components: {
     Lister
   },
 
   computed: {
-    allProducts() {
-      return this.$store.state.notebooks.concat(this.$store.state.smartphones);
-    },
+    ...mapGetters({
+      allProducts: "getAllProducts",
 
-    imgClass(allProducts) {
-      if (item.id.startsWith("SP")) {
-        return "";
-      }
+    }),
 
-      if (item.id.startsWith("PC")) {
-        return "pc-img";
-      }
-    }
   }
 };
 </script>

@@ -98,18 +98,43 @@ export default new Vuex.Store({
         price: 1067,
         stockQty: 10
       }
-    ]
+    ],
+
+    cartItems:[],
+  },
+
+  getters:{
+    getSmartphones: state => state.smartphones,
+    getNotebooks: state => state.notebooks,
+    getAllProducts: state => state.notebooks.concat(state.smartphones),
+    getCartItems: state => state.cartItems
 
   },
 
-  // mutations: {
-  //   change(state, flavor) {
-  //     state.flavor = flavor
-  //   }
-  // },
-  
-  // getters: {
-  //   flavor: state => state.flavor
-  // }
+  mutations:{
+    ADDTOCART: (state, item, getters) => {
+      state.cartItems.push(item);
+      // getters.getAllProducts.filter(product => product.stockQty--);
+      getters.getAllProducts.find(product => product.id === item.id).stockQty--;
+    },
+
+    REMOVEFROMCART: (state, index, getters) => {
+      state.cartItems.splice(index, 1);
+      getters.getAllProducts.find(product => product.id === state.cartItems[index].id).stockQty++;
+            
+    },
+
+  },
+
+  actions:{
+    addItem: (context, item) => {
+      context.commit("ADDTOCART", item);
+    },
+
+    removeItem: (context, index) => {
+      context.commit(" REMOVEFROMCART", index);
+    },
+
+  }
 
 });

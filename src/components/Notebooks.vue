@@ -5,7 +5,10 @@
 </template>
 
 <script>
+
+import { mapGetters } from 'vuex';
 import Lister from "./common/ProductsLister";
+
 export default {
   
   components:{
@@ -13,9 +16,9 @@ export default {
   },
 
   computed:{
-    notebooks() {
-      return this.$store.state.notebooks;
-    },
+    ...mapGetters({
+      notebooks: "getNotebooks"
+    }),        
 
   },
 

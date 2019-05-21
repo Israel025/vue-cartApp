@@ -13,7 +13,7 @@
           <span>In Stock: {{item.stockQty}} unit(s)</span>
         </div>
         <div class="sections">
-          <Bttn>
+          <Bttn @click.native="addProductToCart(item)">
             <p>Add to Cart</p>
           </Bttn>
         </div>
@@ -23,7 +23,10 @@
 </template>
 
 <script>
+
+import { mapGetters, mapActions } from 'vuex';
 import Bttn from "./cartBtn";
+
 export default {
   props: ["products", "productImg"],
 
@@ -31,16 +34,19 @@ export default {
     Bttn
   },
 
-  computed:{
-    imgClass(){
-     if(item.id.startsWith("SP")) {
-       return ""
-     }
+  methods:{
+    ...mapActions({
+      addToCart: "addItem",
+    }),
 
-     if(item.id.startsWith("PC")) {
-       return "productImg"
-     }    
+    addProductToCart(item){
+      this.addToCart(item);
     }
+  },
+
+  computed:{
+    
+    
   }
 };
 </script>
@@ -62,7 +68,7 @@ export default {
 
 .item {
   width: 300px;
-  background-color: rgb(243, 241, 241);
+  background-color: rgb(243, 242, 241);
   list-style: none;
   box-sizing: border-box;
   padding: 1em;
