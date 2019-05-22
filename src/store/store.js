@@ -112,15 +112,15 @@ export default new Vuex.Store({
   },
 
   mutations:{
-    ADDTOCART: (state, item, getters) => {
+    ADDTOCART: (state, item) => {
       state.cartItems.push(item);
       // getters.getAllProducts.filter(product => product.stockQty--);
-      getters.getAllProducts.find(product => product.id === item.id).stockQty--;
+      state.notebooks.concat(state.smartphones).find(product => product.id === item.id).stockQty--;
     },
 
-    REMOVEFROMCART: (state, index, getters) => {
+    REMOVEFROMCART: (state, index) => {
       state.cartItems.splice(index, 1);
-      getters.getAllProducts.find(product => product.id === state.cartItems[index].id).stockQty++;
+      state.notebooks.concat(state.smartphones).find(product => product.id === state.cartItems[index].id).stockQty++;
             
     },
 
@@ -132,7 +132,7 @@ export default new Vuex.Store({
     },
 
     removeItem: (context, index) => {
-      context.commit(" REMOVEFROMCART", index);
+      context.commit("REMOVEFROMCART", index);
     },
 
   }
